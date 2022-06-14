@@ -12,6 +12,8 @@ Python: Deploying sites on Django. wsgi, gunicorn, nginx
 
 ![img_17.png](img_17.png)
 
+![img_18.png](img_18.png)
+
 ## update 2022.06.10 Site optimization
 
 ![img_14.png](img_14.png)

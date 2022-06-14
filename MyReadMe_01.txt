@@ -175,3 +175,7 @@ server {
 }
 -------------------------------------------------
 service nginx restart
+
+
+----Update firewall
+sudo ufw disable
