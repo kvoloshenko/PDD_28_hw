@@ -1,5 +1,18 @@
 # PDD_28_hw
 Python: Deploying sites on Django. wsgi, gunicorn, nginx
+## update 2022.06.14 Deploying
+### service nginx status
+
+![img_15.png](img_15.png)
+
+### sudo systemctl status gunicorn
+![img_16.png](img_16.png)
+
+### Rusult:
+
+![img_17.png](img_17.png)
+
+![img_18.png](img_18.png)
 
 ## update 2022.06.10 Site optimization
 
