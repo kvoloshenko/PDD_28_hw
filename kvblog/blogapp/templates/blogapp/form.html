@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title%}Поиск{% endblock %}
+
+{% block content %}
+    <h1>Форма для поиска</h1>
+    <!--    form для отправки данных на сервер-->
+    <div class="input-group mb-3">
+<!--    <form action="results.html" method="post">-->
+<!--&lt;!&ndash;        input - поля для ввода данных или кнопки&ndash;&gt;-->
+<!--&lt;!&ndash;        type - тип поля, value-его значение, placeholder-подсказка&ndash;&gt;-->
+<!--        <input type="text" name="query_string" value="" placeholder="строка поиска" class="form-control">-->
+<!--        <br>-->
+<!--        <br>-->
+<!--&lt;!&ndash;        submit - кнопка&ndash;&gt;-->
+<!--&lt;!&ndash;        select - выпадающий список&ndash;&gt;-->
+<!--        <p><select name="where" class="btn btn-secondary dropdown-toggle">-->
+<!--                <option value="all">Везде</option>-->
+<!--                <option value="company">В названии компании</option>-->
+<!--                <option selected value="name">В названии вакансии</option>-->
+<!--            </select>-->
+<!--        <input type="submit" value="Искать вакансии" class="btn btn-secondary"></p>-->
+<!--    </form>-->
+        <form id="hhSearchForm" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-secondary" id="hhSearchButton">Искать вакансии</button>
+        </form>
+    </div>
+    <hr>
+{% endblock %}
+
+<div class="alert alert-success" role="alert">
+<p>
+    {% block jok%}Существует два вида языков программирования: одни – все ругают, другими не пользуются {% endblock %}
+</p>
+</div>

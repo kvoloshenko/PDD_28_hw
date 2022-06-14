@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title%}Результаты{% endblock %}
+
+{% block content %}
+    <h1>История запросов</h1>
+    <h3>Ключевые слова:</h3>
+
+ {% for request in requests %}
+       <a class="nav-link" href="/result/{{ request.id }}/">{{ request.keywords }}  {{ request.id }}</a>
+ {% endfor %}
+        <!-- Pager -->
+
+        <div class="clearfix">
+            <div class="pagination">
+
+            <span class="step-links">
+                {% if requests.has_previous %}
+                    <a href="?page={{ requests.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ requests.number }} of {{ requests.paginator.num_pages }}.
+                </span>
+
+                {% if requests.has_next %}
+                    <a class="step-links" href="?page={{ requests.next_page_number }}">next</a>
+                {% endif %}
+
+            </span>
+            </div>
+        </div>
+<br><br>
+
+{% endblock %}
+
+<div class="alert alert-success" role="alert">
+<p>
+    {% block jok%}Пока компьютеры не умеют мыслить самостоятельно, им можно доверять{% endblock %}
+</p>
+</div>

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title%}Список запросов{% endblock %}
+
+{% block content %}
+<h1>
+    Изменение запроса
+</h1>
+        <form id="hhSearchForm" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-secondary" id="hhSearchButton">Сохранить</button>
+            <div class="alert alert-warning" role="alert">
+            <p>Внимание! Данные будут обновлены на основании нового запроса к HH.RU!</p>
+            </div>
+        </form>
+
+<!--table - таблица, tr-строка, td-столбец, th-заголовок-->
+<br>
+<h3>Навыки</h3>
+    <table class="table table-striped table-dark">
+    <tr>
+<!--        <th>id запроса</th>-->
+        <th>Навык</th>
+        <th>Количество</th>
+        <th>%</th>
+    </tr>
+ {% for item in responses %}
+        <tr>
+<!--  {#          <td>{{ item.request.id }}</td>#}-->
+            <td>{{ item.skill_name }}</td>
+            <td>{{ item.skill_count }}</td>
+            <td>{{ item.skill_persent }}</td>
+        </tr>
+ {% endfor %}
+    </table>
+{% endblock %}
+
+<div class="alert alert-success" role="alert">
+<p>
+    {% block jok%}Функция будильника еще поспать ввела программиста утром в бесконечный цикл{% endblock %}
+</p>
+</div>

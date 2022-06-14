@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}Контакты{% endblock %}
+
+{% block content %}
+<h1>
+    Контакты
+</h1>
+<h2>
+    Разработчик: {{dev_name}}
+</h2>
+<h3>
+    дата создания: {{creation_date}}
+</h3>
+<!--    img - картинка-->
+<div class="media">
+        <img src="{% static 'images/IMG_1616.JPG' %}" width="200px" class="mr-3">
+</div>
+{% endblock %}
+
+<div class="alert alert-success" role="alert">
+<p>
+    {% block jok%}Опытный разработчик всегда посмотрит направо и налево, даже если переходит улицу с односторонним движением {% endblock %}
+</p>
+</div>

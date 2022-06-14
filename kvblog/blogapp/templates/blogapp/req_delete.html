@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title%}Список запросов{% endblock %}
+
+{% block content %}
+<h1>
+    Удаление запроса
+</h1>
+<div class="">
+    <h2>{{object.keywords}}</h2>
+    <h3>Вы уверены?</h3>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Удалить</button>
+    </form>
+</div>
+{% endblock %}
+
+<div class="alert alert-success" role="alert">
+<p>
+    {% block jok%}Функция будильника еще поспать ввела программиста утром в бесконечный цикл{% endblock %}
+</p>
+</div>

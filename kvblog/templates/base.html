@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--    подключение css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}" >
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+</head>
+<body class="p-3 mb-2 bg-light text-dark">
+<div class="alert alert-success" role="alert">
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'blog:index' %}">На главную</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'blog:form' %}">Начать поиск</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'blog:history' %}">История</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'blog:req_list' %}">Управление данными</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'blog:contacts' %}">Контакты</a>
+  </li>
+    {% if user.is_authenticated %}
+        <li class="nav-item">
+                <div class="nav-link">Привет, {{user.username}}</div>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:logout' %}">Выход</a>
+        </li>
+    {% else %}
+        <li class="nav-item">
+                    <a class="nav-link" href="{% url 'users:login' %}">Вход</a>
+        </li>
+
+        <li class="nav-item">
+                    <a class="nav-link" href="{% url 'users:register' %}">Регистрация</a>
+        </li>
+    {% endif %}
+
+</ul>
+</div>
+<!-- Main Content -->
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+
+<div class="alert alert-success" role="alert">
+<p>
+    {% block jok%}Пока компьютеры не умеют мыслить самостоятельно, им можно доверять{% endblock %}
+</p>
+</div>
+
+</body>
+</html>
