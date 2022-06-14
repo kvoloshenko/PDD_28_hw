@@ -26,10 +26,7 @@ SECRET_KEY = 'm6ss=s6df@6)dbcj(qqg+2kx*z=@ahe@wr8hqk60q%k0!+h^e^'
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1",
-                 "192.168.0.109",
-                 "192.168.56.1",
-                 "192.168.0.107"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,9 +79,17 @@ WSGI_APPLICATION = 'kvblog.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # },
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'sitedb',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'django',
+        'PASSWORD': 'nu123456',
+        'HOST': 'localhost'
     }
 }
 
